@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+<h:body>
+    <h1>Login</h1>
+    <h:form>
+        <p:layout style="min-width:400px;min-height:200px;">
+            <p:layoutUnit position="center">
+                <h:panelGrid columns="2" cellpadding="5">
+
+                    <h:outputText value="Login: "/>
+                    <p:inputText value="#{login.login}"/>
+
+                    <h:outputText value="Password: "/>
+                    <p:password id="nonFeedback" value="#{login.password}"/>
+
+                    <p:commandButton value="Login" id="login"
+                                     actionListener="#{login.doLogin}"
+                                     styleClass="ui-priority-primary"/>
+
+                    <p:commandButton value="Register" id="register"
+                                     actionListener="#{login.registerNewUser}"
+                                     styleClass="ui-priority-primary"/>
+                </h:panelGrid>
+            </p:layoutUnit>
+        </p:layout>
+       <!-- <h:selectOneMenu>
+            <f:selectItem itemLabel="Bibliography"> </f:selectItem>
+            <f:selectItem itemLabel="History"> </f:selectItem>
+        </h:selectOneMenu>
+
+        <h:button outcome="Body.xhtml" value="some button"></h:button>
+        <h:link outcome="Body.xhtml"> some link</h:link>
+
+        <h:commandButton action="#{buttonAction.buttonAction}" value="some Button"> </h:commandButton>
+        <h:commandLink> some Link</h:commandLink>-->
+
+
+
+    </h:form>
+</h:body>
+</html>
