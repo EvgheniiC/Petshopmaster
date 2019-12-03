@@ -5,17 +5,24 @@ import com.eventim.petshop.entities.Customer;
 import com.eventim.petshop.entities.CustomerRepository;
 
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
+import javax.validation.constraints.Size;
+import java.io.IOException;
 import java.io.Serializable;
 
 @ManagedBean
 public class Login implements Serializable {
 
+
     @EJB
     private CustomerRepository customerRepository;
 
+    @Size(min = 1, message = "Passwort cannot be empty")
     private String password;
+    @Size(min = 1, message = "Login cannot be empty")
     private String login;
 
     public String getPassword() {
@@ -29,19 +36,28 @@ public class Login implements Serializable {
     public void doLogin(ActionEvent actionEvent) {
         Customer customer;
         try {
-            customer = customerRepository.findUserByLoginAndPassword(login, password);
+            customer = customerRepository.findUserByLogin(login);
         } catch (Exception e) {
             e.printStackTrace();
-            return;
+            return ;
         }
+        if (customer!=null && customer.getPassword().equals(this.password)){
         FacesUtils.putUserId(customer.getId());
-        redirectToOverview();
+        redirectToOverview();}
     }
 
     public void registerNewUser(ActionEvent actionEvent) {
-        Customer customer = customerRepository.createCustomer(login, password);
-        FacesUtils.putUserId(customer.getId());
-        redirectToOverview();
+        if (!isCustomerExist()) {
+            Customer customer = customerRepository.createCustomer(login, password);
+            FacesUtils.putUserId(customer.getId());
+            redirectToOverview();
+        } else {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Customer already exits"));
+        }
+    }
+
+    public boolean isCustomerExist() {
+        return customerRepository.findUserByLogin(login) != null;
     }
 
     public String getLogin() {
@@ -55,4 +71,17 @@ public class Login implements Serializable {
     private void redirectToOverview() {
         FacesUtils.redirect("overview.xhtml");
     }
+
+    public void logout() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        context.getExternalContext().invalidateSession();
+        try {
+            context.getExternalContext().redirect("index.xhtml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 }

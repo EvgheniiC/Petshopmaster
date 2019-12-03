@@ -10,7 +10,7 @@ abstract class AbstractRepository {
     @PersistenceContext(name = "petshop_db")
     EntityManager entityManager;
 
-    private <E> Query getQuery(Class<E> clazz, String namedQueryName, Object[] parameter) {
+    public <E> Query getQuery(Class<E> clazz, String namedQueryName, Object[] parameter) {
         Query namedQuery = entityManager.createNamedQuery(namedQueryName, clazz);
         for (int index = 0; index < parameter.length; index++) {
             namedQuery.setParameter(index + 1, parameter[index]);

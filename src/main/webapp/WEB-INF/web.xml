@@ -1,4 +1,12 @@
 <web-app>
+
+        xmlns="http://Java.Sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://Java.Sun.com/xml/ns/javaee http://Java.Sun.com/xml/ns/javaee/web-app_3_0.xsd
+        http://Java.Sun.com/xml/ns/javaee
+        http://Java.Sun.com/xml/ns/javaee "
+        version="3.0">
+
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
         <servlet-class>com.eventim.petshop.hello.HelloServlet</servlet-class>
@@ -44,5 +52,32 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+
+
+    <resource-ref>
+        <description>MySQL Datasource example</description>
+        <res-ref-name>jdbc/mkyongdb</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
+
+    <!-- Zugriff  -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>secured</web-resource-name>
+            <url-pattern>/secured/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <rolen-name>admin</rolen-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-rolen>
+        <rolen-name>admin</rolen-name>
+    </security-rolen>
+
 
 </web-app>

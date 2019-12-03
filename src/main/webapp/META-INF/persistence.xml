@@ -8,11 +8,18 @@
         <jta-data-source>petshop_db</jta-data-source>
 
         <class>com.eventim.petshop.entities.Pet</class>
+        <class>com.eventim.petshop.entities.Customer</class>
+
 
         <properties>
             <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
         </properties>
 
     </persistence-unit>
+
+
+
+
+
 
 </persistence>

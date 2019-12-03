@@ -3,22 +3,47 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsp/jstl/core">
-<h:head>
-</h:head>
-<h:body>
-    <h1>Hello World</h1>
+
+      xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsp/jstl/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+ <h:head>
+
+
+
+    </h:head>
+   <h:body>
+    <h1>Hello,#{firstPage.loginName} </h1>
     <h:form>
-        <p:growl id="growl" life="2000"/>
+        <h:messages id="messages" />
+            <p:commandButton value="create pet" id="ajax" update="addedPets messages" actionListener ="#{firstPage.buttonAction}"
+                         styleClass="ui-priority-primary" />
+               <h:inputText value="#{firstPage.petName}"  a:placeholder="add or remove"/>
+                    <br> </br>
 
-        <p:commandButton value="create pet" id="ajax" update="growl" actionListener ="#{firstPage.buttonAction}"
-                         styleClass="ui-priority-primary"/>
-        <h:inputText value="#{firstPage.petName}"/>
-        <h:form>
-            <h:dataTable value="#{customerRepository.addPetToCustomer"/>
-        </h:form>
+            <p:commandButton value="delete pet" id="delete" update="addedPets messages"  actionListener ="#{firstPage.buttonDeleteAction}"
+                             styleClass="ui-priority-primary"   />
+
+        <br> </br>
+        <h:commandButton value="logout" action="#{login.logout}" />
+        <br> </br>
+
+        <p:panel header="Pets" id="addedPets">
+            <br> </br>
+            <p:dataTable value="#{firstPage.pets}" var="pet" >
+               <p:column>
+                   <h:outputText value="#{pet.name}" id="addPets" >
+                   </h:outputText>
+               </p:column>
+            </p:dataTable>
+        </p:panel>
+
+        <br> </br>
+
+        <p:commandButton value="schowallcustomer" id="allcustomer" update="addedPets messages" action ="#{firstPage.role.allCustomerUndPetForAdmin}"
+                         styleClass="ui-priority-primary"  rendered="#{facesContext.externalContext.isUserInRole('admin')}" />
+
+      </h:form>
 
 
-    </h:form>
-</h:body>
+   </h:body>
 </html>

@@ -1,10 +1,11 @@
 package com.eventim.petshop.entities;
 
-import org.apache.xpath.operations.String;
+//import org.apache.xpath.operations.String;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Collection;
+import java.lang.String;
 
 @Entity(name = "PET")
 public class Pet {

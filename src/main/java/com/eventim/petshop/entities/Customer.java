@@ -1,35 +1,49 @@
 package com.eventim.petshop.entities;
 
-import org.apache.openjpa.persistence.jdbc.Unique;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
-@NamedQuery(name = Customer.FIND_BY_USERNAME_AND_PASSWORD, query = "SELECT c FROM CUSTOMER c WHERE c.login = ?1 AND c.password = ?2")
 
+/*@NamedQueries({
+        @NamedQuery(name = "Customer.FIND_BY_USERNAME_AND_PASSWORD", query = "SELECT c FROM CUSTOMER c WHERE c.login = ?1 AND c.password = ?2"),
+
+})*/
+@NamedQuery(name ="CUSTOMER.findByLogin", query = "SELECT c FROM CUSTOMER c WHERE c.login = ?1")
 @Entity(name = "CUSTOMER")
 public class Customer {
 
-    public static final String FIND_BY_USERNAME_AND_PASSWORD = "findByUsernameAndPassword";
 
-    EntityManager em;
+    //public static final String FIND_BY_USERNAME_AND_PASSWORD = "findByUsernameAndPassword";
+    public static final String FIND_BY_USERNAME = "SELECT c FROM CUSTOMER c WHERE c.login = ?1";
+
 
     @Id
     @GeneratedValue
     private Integer id;
 
-    @Column
-    @Unique
+    @Column(unique = true)
     private String login;
 
     @Column
     private String password;
 
     @OneToMany
-    private List<Pet> pets;
+    private List<Pet> pets = new ArrayList<>();
+
+    @OneToMany
+    private Set<Role> rolen;
+
+    public Set<Role> getRolen() {
+        return rolen;
+    }
+
+    public void setRolen(Set<Role> rolen) {
+        this.rolen = rolen;
+    }
 
     public Integer getId() {
         return id;
@@ -55,18 +69,20 @@ public class Customer {
         this.password = password;
     }
 
-    public List<Pet> getPets() {
-     /*   List<Pet> pets = new ArrayList<>();
-        Query query = em.createQuery("SELECT  pet FROM CUSTOMER");
-        List<Customer> customerList = query.getResultList();
-        for (Customer customer: customerList){
-            pets.add((Pet) customer.getPets());
-        }*/
-        return pets;
-    }
-
     public void setPets(List<Pet> pets) {
         this.pets = pets;
+    }
+
+    public Collection<Pet> getPets() {
+        return this.pets;
+    }
+
+    public void addPet(Pet pet){
+        pets.add(pet);
+    }
+
+    public void deletePet(Pet pet){
+        pets.remove(pet);
     }
 
     public BigDecimal getPreisForAllPetsStream() {
@@ -76,5 +92,22 @@ public class Customer {
                 .map(Treatment::getPreis)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", pets=" + pets +
+                '}';
+    }
 
+    public boolean isPetExist(String name){
+        for (Pet pet: getPets()){
+            if (pet.getName().equals(name)){
+                return true;
+            }
+        }
+        return false;
+    }
 }
