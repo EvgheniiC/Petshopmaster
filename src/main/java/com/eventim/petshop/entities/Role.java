@@ -1,52 +1,39 @@
 package com.eventim.petshop.entities;
 
-import javax.annotation.security.DeclareRoles;
-import javax.annotation.security.RolesAllowed;
-import javax.ejb.EJB;
-import javax.faces.bean.ManagedBean;
-import javax.faces.context.FacesContext;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.security.Principal;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
-@DeclareRoles("ADMIN")
-@Entity(name = "ROLLE")
+@NamedQueries({
+        @NamedQuery(name ="Role.findByRole", query = "SELECT c FROM Role c where c.rollName=?1")})
+@Entity(name = "Role")
 public class Role implements Serializable {
 
-
-    @EJB
-    private CustomerRepository customerRepository;
-
+    @Id
     @NotNull
     @Column
     private String rollName;
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL)
-    private Customer customer;
+    @OneToMany
+    private Set<Customer> customer;
 
-    @Id
-    @GeneratedValue
-    private long id;
 
-    public Customer getCustomer() {
+
+    public Role(@NotNull String rollName) {
+        this.rollName = rollName;
+    }
+
+    public Role() {
+    }
+
+
+    public Set<Customer> getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(Set<Customer> customer) {
         this.customer = customer;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getId() {
-        return id;
     }
 
     public String getRollName() {
@@ -57,22 +44,8 @@ public class Role implements Serializable {
         this.rollName = rollName;
     }
 
-
-    public boolean isAdmin() {
-        FacesContext context = FacesContext.getCurrentInstance();
-        return context.getExternalContext().isUserInRole("admin");
-    }
-
-
-    //@RolesAllowed("admin")
-    public List<Customer> allCustomerUndPetForAdmin() {
-       /* ArrayList<Customer> customers = new ArrayList<>();
-        for (Customer customer : customerRepository.getAllCustomer()){
-            customers.add(customer);
-        }
-        return customers;
-    }*/
-        TypedQuery<Customer> query = customerRepository.entityManager.createQuery("select c from CUSTOMER c ", Customer.class);
-        return query.getResultList();
+    @Override
+    public String toString() {
+        return rollName;
     }
 }

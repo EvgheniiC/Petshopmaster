@@ -12,6 +12,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.event.ActionEvent;
 import javax.inject.Named;
 import java.util.Collection;
+import java.util.List;
 
 @Named
 @ManagedBean
@@ -25,6 +26,16 @@ public class FirstPage {
 
     private Customer customer;
     private Role role;
+
+    private boolean createAsAdmin;
+
+    public boolean isCreateAsAdmin() {
+        return createAsAdmin;
+    }
+
+    public void setCreateAsAdmin(boolean createAsAdmin) {
+        this.createAsAdmin = createAsAdmin;
+    }
 
     public Customer getCustomer() {
         return customer;
@@ -72,5 +83,10 @@ public class FirstPage {
 
     public Collection<Pet> getPets() {
         return customerManager.getPetsForCustomer(FacesUtils.getUserId());
+    }
+
+    public List<Customer> getCustomers(){
+        List<Customer> c = customerManager.getAll();
+           return  customerManager.getAll();
     }
 }

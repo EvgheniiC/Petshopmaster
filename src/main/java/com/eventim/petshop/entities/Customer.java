@@ -2,24 +2,16 @@ package com.eventim.petshop.entities;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 
-/*@NamedQueries({
-        @NamedQuery(name = "Customer.FIND_BY_USERNAME_AND_PASSWORD", query = "SELECT c FROM CUSTOMER c WHERE c.login = ?1 AND c.password = ?2"),
-
-})*/
-@NamedQuery(name ="CUSTOMER.findByLogin", query = "SELECT c FROM CUSTOMER c WHERE c.login = ?1")
+@NamedQueries({
+        @NamedQuery(name ="CUSTOMER.findByLogin", query = "SELECT c FROM CUSTOMER c WHERE c.login = ?1"),
+        @NamedQuery(name ="CUSTOMER.findAllCUSTOMER", query = "SELECT c FROM CUSTOMER c ")})
 @Entity(name = "CUSTOMER")
 public class Customer {
 
-
-    //public static final String FIND_BY_USERNAME_AND_PASSWORD = "findByUsernameAndPassword";
     public static final String FIND_BY_USERNAME = "SELECT c FROM CUSTOMER c WHERE c.login = ?1";
-
 
     @Id
     @GeneratedValue
@@ -31,18 +23,19 @@ public class Customer {
     @Column
     private String password;
 
-    @OneToMany
+    @OneToMany( fetch = FetchType.EAGER)
     private List<Pet> pets = new ArrayList<>();
 
-    @OneToMany
-    private Set<Role> rolen;
+    @ManyToOne
+    private Role role;
 
-    public Set<Role> getRolen() {
-        return rolen;
+
+    public Role getRole() {
+        return role;
     }
 
-    public void setRolen(Set<Role> rolen) {
-        this.rolen = rolen;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public Integer getId() {
@@ -77,12 +70,9 @@ public class Customer {
         return this.pets;
     }
 
+
     public void addPet(Pet pet){
         pets.add(pet);
-    }
-
-    public void deletePet(Pet pet){
-        pets.remove(pet);
     }
 
     public BigDecimal getPreisForAllPetsStream() {

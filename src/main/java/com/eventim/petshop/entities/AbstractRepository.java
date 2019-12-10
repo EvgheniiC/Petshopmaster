@@ -18,6 +18,8 @@ abstract class AbstractRepository {
         return namedQuery;
     }
 
+
+
     <E> E find(Class<E> clazz, String namedQueryName, Object... parameter) {
         Query namedQuery = getQuery(clazz, namedQueryName, parameter);
         return (E) namedQuery.getSingleResult();

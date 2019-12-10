@@ -14,9 +14,9 @@
     <h1>Login</h1>
     <h:form id="form">
         <P:messages id="messages" />
-        <p:layout style="min-width:400px;min-height:200px;">
+        <p:layout style="min-width:400px;min-height:400px;">
             <p:layoutUnit position="center">
-                <h:panelGrid columns="2" cellpadding="5">
+                <h:panelGrid columns="2" cellpadding="6">
 
                     <h:outputText value="Login: "/>
                     <p:inputText value="#{login.login}" a:placeholder="What´s your name?"/>
@@ -24,6 +24,10 @@
                     <h:outputText value="Password: "/>
                     <p:password id="nonFeedback" value="#{login.password}"/>
 
+                    <p:selectOneMenu value="#{login.role}">
+                        <f:selectItems value="#{login.roles}" ></f:selectItems>
+
+                    </p:selectOneMenu>
 
                     <p:commandButton value="Login" id="login"
                                      actionListener="#{login.doLogin}"
@@ -32,9 +36,14 @@
                     <p:commandButton value="Register" id="register"
                                      actionListener="#{login.registerNewUser}"
                                      styleClass="ui-priority-primary" update="@form"/>
+
+
                 </h:panelGrid>
             </p:layoutUnit>
         </p:layout>
+
+
+
        <!-- <h:selectOneMenu>
             <f:selectItem itemLabel="Bibliography"> </f:selectItem>
             <f:selectItem itemLabel="History"> </f:selectItem>
@@ -45,8 +54,6 @@
 
         <h:commandButton action="#{buttonAction.buttonAction}" value="some Button"> </h:commandButton>
         <h:commandLink> some Link</h:commandLink>-->
-
-
 
     </h:form>
 </h:body>

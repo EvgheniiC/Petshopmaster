@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a79f60b-35c1-41b8-8015-c0904aa734e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Gradle___com_eventim_petshop___petshop_war__exploded_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/com.eventim.petshop.petshop.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/com.eventim.petshop.petshop.test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/Login/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/AbstractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/AbstractRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/PetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/PetRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/hello/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/hello/HelloServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/manager/PetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/manager/PetManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/view/FirstPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventim/petshop/view/FirstPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/overview.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/overview.xhtml" afterDir="false" />
-    </list>
+    <list default="true" id="4a79f60b-35c1-41b8-8015-c0904aa734e2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +26,11 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -103,14 +88,15 @@
       <list>
         <option value="cdi.beans_1_1" />
         <option value="HTML File" />
-        <option value="jsf" />
         <option value="Enum" />
+        <option value="jsf" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/admin.xhtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/overview.xhtml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -126,17 +112,6 @@
     <option name="height" value="880" />
   </component>
   <component name="ProjectId" id="1TmNL7r29WTClqjDYlj8eC5DHt1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="hsqldb&#10;mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -389,51 +364,57 @@
       <workItem from="1574943800896" duration="6570000" />
       <workItem from="1574962114307" duration="7491000" />
       <workItem from="1575144547642" duration="50194000" />
-      <workItem from="1575390369795" duration="46000" />
+      <workItem from="1575389737749" duration="10620000" />
+      <workItem from="1575615126778" duration="12462000" />
+      <workItem from="1575795613896" duration="7548000" />
+      <workItem from="1575874418020" duration="17460000" />
+      <workItem from="1575960972687" duration="18061000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Application Servers" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Build" visible="true" weight="0.32954547" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Gradle" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/CustomerRepository.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/CustomerRepository.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/CustomerRepository.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/CustomerRepository.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/CustomerRepository.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/CustomerRepository.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/eventim/petshop/entities/CustomerRepository.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/petshop$CustomerSpec_GetPreisForPet.ic" NAME="CustomerSpec.GetPreisForPet Coverage Results" MODIFIED="1574149035335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
