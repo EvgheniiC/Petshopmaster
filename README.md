@@ -1,5 +1,3 @@
-# Aufgaben
-Die folgenden Aufgaben können in beliebiger Reihenfolge und beliebig komplex gelöst werden.
 
 ## Datenbank
 * Erweitere das Modell um die Tabelle Treatment
